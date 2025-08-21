@@ -147,7 +147,7 @@ const Testimonials = () => {
             </div>
             <span className="text-2xl font-bold text-foreground">4.9</span>
             <span className="text-muted-foreground">av 5 stjärnor</span>
-            <span className="text-sm text-muted-foreground">(500+ recensioner)</span>
+            <span className="text-sm text-muted-foreground">(50+ recensioner)</span>
           </div>
         </div>
       </div>
