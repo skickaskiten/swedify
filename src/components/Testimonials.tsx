@@ -3,39 +3,68 @@ import { Star, Quote } from "lucide-react";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Anna Lindberg",
-      role: "Expat från Tyskland",
-      content: "Ragnar gör lektioner superroliga! Hans kreativa metoder med memes och kultur hjälpte mig att prata svenska flyt på bara 6 månader.",
+      name: "Maya",
+      role: "Student",
+      content: "Best teacher ever! If you're like me and struggle with apps and books, Ragnar is your guy. His way of teaching is so intuitive and cuts through all the traditional methods and gets the concepts into your body through speaking and repetition. After 3 years of struggling, I'm hopeful I'll be fluent in a years time! Thank you Ragnar!",
       rating: 5,
-      image: "👩‍💼"
+      image: "👩‍💼",
+      date: "June 25, 2025"
     },
     {
-      name: "Marcus Johnson",
-      role: "Student vid KTH",
-      content: "Bästa språkläraren någonsin! Ragnars passion för svenska språket är smittsam. Nu känner jag mig trygg att prata svenska på universitetet.",
+      name: "Matteo",
+      role: "Language Learner",
+      content: "Ragnar is a great teacher! I would recommend him to anyone looking to learn Swedish, independently of your starting level.",
       rating: 5,
-      image: "👨‍🎓"
+      image: "👨‍💼",
+      date: "October 30, 2024"
     },
     {
-      name: "Sofia Chen",
-      role: "Programmerare",
-      content: "Som dataingenjör älskar jag Ragnars strukturerade approach. Han gör grammatiken logisk och lätt att förstå. Rekommenderar starkt!",
+      name: "Theres",
+      role: "Polyglot",
+      content: "I am really enjoying my classes with Ragnar. He is very authentic and creates a joyful lesson. I'm a beginner, but learned a few languages before and he alters the tempo i need. I can recommend Ragnar's lessons, it was def. a good choice for me.",
       rating: 5,
-      image: "👩‍💻"
+      image: "👩‍🎓",
+      date: "September 5, 2024"
     },
     {
-      name: "Erik Andersson",
-      role: "Företagare",
-      content: "Ragnar hjälpte mig med affärssvenska. Nu kan jag hålla presentationer och möten på svenska med självförtroende. Fantastisk lärare!",
+      name: "Olga",
+      role: "Student",
+      content: "Ragnar is a really good teacher! His lessons are fun that helps to learn language easier. He is positive and you should not be afraid to do mistakes during his lessons. Good choice to make great progress in language learning!",
       rating: 5,
-      image: "👨‍💼"
+      image: "👩‍💻",
+      date: "January 24, 2024"
     },
     {
-      name: "Isabella Rodriguez",
-      role: "Konstnär",
-      content: "Ragnars kreativa sätt att lära ut svenska passar perfekt för mig som konstnär. Vi använder konst och kultur i lektionerna - så inspirerande!",
+      name: "Sofia",
+      role: "Swedish Learner",
+      content: "Ragnar is a great teacher, happy that I started to learn Swedish with him.",
       rating: 5,
-      image: "👩‍🎨"
+      image: "👩‍🎨",
+      date: "April 2, 2024"
+    },
+    {
+      name: "gkberk",
+      role: "Student",
+      content: "His lessons are always fun and interesting. He is passionate about his job. I recommend him if you want to improve your Swedish language skills.",
+      rating: 5,
+      image: "👨‍🎓",
+      date: "December 22, 2024"
+    },
+    {
+      name: "Malu",
+      role: "Student", 
+      content: "Ragnar is great! Really recommend.",
+      rating: 5,
+      image: "🎯",
+      date: "February 15, 2025"
+    },
+    {
+      name: "Sarah",
+      role: "Student",
+      content: "A very good teacher",
+      rating: 5,
+      image: "⭐",
+      date: "February 6, 2025"
     }
   ];
 
