@@ -2,41 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Swedify Design System - Swedish Language Learning Platform
+Nordic-inspired colors and design tokens for a warm, educational experience.
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Nordic Color Palette */
+    --background: 210 40% 98%;
+    --foreground: 220 25% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Swedish Blue - Primary brand color */
+    --primary: 215 100% 40%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 215 100% 85%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Forest Green - Secondary color */
+    --secondary: 140 45% 35%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 140 45% 85%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Swedish Yellow - Accent color */
+    --accent: 45 100% 50%;
+    --accent-foreground: 220 25% 15%;
+    --accent-light: 45 100% 85%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Neutral tones */
+    --muted: 210 25% 95%;
+    --muted-foreground: 220 15% 45%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 215 100% 40%;
 
-    --radius: 0.5rem;
+    --radius: 0.8rem;
+
+    /* Swedish-inspired gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(215 100% 40%), hsl(215 100% 50%));
+    --gradient-secondary: linear-gradient(135deg, hsl(140 45% 35%), hsl(140 45% 45%));
+    --gradient-accent: linear-gradient(135deg, hsl(45 100% 50%), hsl(45 100% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(215 100% 40%), hsl(140 45% 35%), hsl(45 100% 50%));
+    --gradient-subtle: linear-gradient(180deg, hsl(210 40% 98%), hsl(210 25% 95%));
+
+    /* Shadows with Swedish colors */
+    --shadow-soft: 0 4px 20px -4px hsl(215 100% 40% / 0.15);
+    --shadow-medium: 0 8px 30px -8px hsl(215 100% 40% / 0.25);
+    --shadow-strong: 0 12px 40px -12px hsl(215 100% 40% / 0.35);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +126,81 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Hero Components */
+  .hero-section {
+    @apply min-h-screen bg-gradient-to-br from-primary via-secondary to-accent relative overflow-hidden;
+  }
+
+  .hero-content {
+    @apply relative z-10 text-center px-4 sm:px-6 lg:px-8 py-20;
+  }
+
+  .hero-title {
+    @apply text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-subtitle {
+    @apply text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed;
+  }
+
+  /* Button Variants */
+  .btn-hero {
+    @apply bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white/30 hover:scale-105 transform transition-all duration-300 px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl;
+  }
+
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 px-6 py-3 rounded-lg font-semibold;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary/90 text-secondary-foreground shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 px-6 py-3 rounded-lg font-semibold;
+  }
+
+  .btn-accent {
+    @apply bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 px-6 py-3 rounded-lg font-semibold;
+  }
+
+  /* Card Variants */
+  .card-elegant {
+    @apply bg-white rounded-2xl shadow-soft hover:shadow-medium transition-all duration-300 p-8 border border-border/50;
+  }
+
+  .card-feature {
+    @apply bg-white rounded-xl p-6 shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-1;
+  }
+
+  /* Text Animations */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+  }
+
+  .fade-in {
+    @apply opacity-0 translate-y-6 transition-all duration-700 ease-out;
+  }
+
+  .fade-in.animate {
+    @apply opacity-100 translate-y-0;
+  }
+
+  /* Swedish Flag Pattern */
+  .swedish-pattern {
+    background: linear-gradient(90deg, 
+      hsl(215 100% 40%) 0%, 
+      hsl(215 100% 40%) 35%, 
+      hsl(45 100% 50%) 35%, 
+      hsl(45 100% 50%) 65%, 
+      hsl(215 100% 40%) 65%, 
+      hsl(215 100% 40%) 100%
+    );
   }
 }
