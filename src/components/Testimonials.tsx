@@ -1,6 +1,25 @@
 import { Star, Quote } from "lucide-react";
+import { useEffect } from "react";
 
 const Testimonials = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const fadeElements = document.querySelectorAll('.fade-in');
+    fadeElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   const testimonials = [
     {
       name: "Maya",
