@@ -1,41 +1,44 @@
 import { Smile, Zap, Target, Users, BookOpen, Lightbulb } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Method = () => {
+  const { t } = useLanguage();
+  
   const methods = [
     {
       icon: <Smile className="h-8 w-8" />,
-      title: "Roligt lärande",
-      description: "Svenska memes, kulturella referenser och interaktiva övningar som får dig att skratta medan du lär dig.",
+      title: t('method.conversational.title'),
+      description: t('method.conversational.description'),
       color: "primary"
     },
     {
       icon: <Zap className="h-8 w-8" />,
-      title: "Effektiv grammatik",
-      description: "Inga tråkiga regler - vi lär grammatik genom praktiska exempel och vardagssituationer.",
+      title: t('method.interactive.title'),
+      description: t('method.interactive.description'),
       color: "secondary"
     },
     {
       icon: <Target className="h-8 w-8" />,
-      title: "Personlig approach",
-      description: "Varje lektion anpassas efter dina mål, intressen och inlärningsstil för bästa resultat.",
+      title: t('method.personalized.title'),
+      description: t('method.personalized.description'),
       color: "accent"
     },
     {
       icon: <Users className="h-8 w-8" />,
-      title: "Svensk kultur",
-      description: "Lär dig inte bara språket utan även kulturen, traditioner och det svenska sättet att tänka.",
+      title: t('method.cultural.title'),
+      description: t('method.cultural.description'),
       color: "primary"
     },
     {
       icon: <BookOpen className="h-8 w-8" />,
-      title: "Praktiska färdigheter",
-      description: "Fokus på verkliga situationer - jobba, handla, prata med grannar och nya vänner.",
+      title: t('method.perfectFor.title'),
+      description: t('method.expat.description'),
       color: "secondary"
     },
     {
       icon: <Lightbulb className="h-8 w-8" />,
-      title: "Kreativa metoder",
-      description: "Spel, sånger, berättelser och visuella hjälpmedel som gör lärandet minnesvärt.",
+      title: t('method.student.title'),
+      description: t('method.lover.description'),
       color: "accent"
     }
   ];
@@ -45,11 +48,10 @@ const Method = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Swedifys <span className="text-gradient">metod</span>
+            {t('method.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Min unika approach kombinerar traditionell språkundervisning med moderna, 
-            interaktiva metoder som gör svenska lärandet både effektivt och kul.
+            {t('method.subtitle')}
           </p>
         </div>
 
@@ -75,34 +77,34 @@ const Method = () => {
         <div className="mt-20 fade-in">
           <div className="card-elegant text-center">
             <h3 className="text-3xl font-bold text-foreground mb-8">
-              Perfekt för dig som är:
+              {t('method.perfectFor.title')}
             </h3>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="space-y-4">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
                   <Users className="h-8 w-8 text-primary" />
                 </div>
-                <h4 className="text-xl font-semibold text-foreground">Expat i Sverige</h4>
+                <h4 className="text-xl font-semibold text-foreground">{t('method.expat.title')}</h4>
                 <p className="text-muted-foreground">
-                  Ny i Sverige och vill integreras snabbt i samhället och kulturen.
+                  {t('method.expat.description')}
                 </p>
               </div>
               <div className="space-y-4">
                 <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto">
                   <BookOpen className="h-8 w-8 text-secondary" />
                 </div>
-                <h4 className="text-xl font-semibold text-foreground">Student</h4>
+                <h4 className="text-xl font-semibold text-foreground">{t('method.student.title')}</h4>
                 <p className="text-muted-foreground">
-                  Studerar i Sverige och behöver svenska för studier och vardagsliv.
+                  {t('method.student.description')}
                 </p>
               </div>
               <div className="space-y-4">
                 <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto">
                   <Lightbulb className="h-8 w-8 text-accent" />
                 </div>
-                <h4 className="text-xl font-semibold text-foreground">Språkälskare</h4>
+                <h4 className="text-xl font-semibold text-foreground">{t('method.lover.title')}</h4>
                 <p className="text-muted-foreground">
-                  Fascinerad av svenska kulturen och vill lära dig språket ordentligt.
+                  {t('method.lover.description')}
                 </p>
               </div>
             </div>

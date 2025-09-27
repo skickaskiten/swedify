@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { Menu, X, BookOpen, MessageSquare, Calendar, Youtube } from "lucide-react";
+import { Menu, X, BookOpen, MessageSquare, Calendar, Youtube, Languages } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language, toggleLanguage, t } = useLanguage();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border/50 shadow-soft">
@@ -17,20 +19,28 @@ const Header = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <a href="#hem" className="text-foreground hover:text-primary transition-colors duration-200">
-              Hem
+              {t('nav.home')}
             </a>
             <a href="#om-mig" className="text-foreground hover:text-primary transition-colors duration-200">
-              Om mig
+              {t('nav.about')}
             </a>
             <a href="#metod" className="text-foreground hover:text-primary transition-colors duration-200">
-              Metod
+              {t('nav.method')}
             </a>
             <a href="#kurser" className="text-foreground hover:text-primary transition-colors duration-200">
-              Kurser
+              {t('nav.courses')}
             </a>
+            <button
+              onClick={toggleLanguage}
+              className="text-foreground hover:text-primary transition-colors duration-200 flex items-center space-x-1"
+              title={language === 'sv' ? 'Switch to English' : 'Byt till svenska'}
+            >
+              <Languages className="h-4 w-4" />
+              <span className="text-sm font-medium">{language === 'sv' ? 'EN' : 'SV'}</span>
+            </button>
             <a href="#kontakt" className="btn-primary inline-flex items-center space-x-2">
               <Calendar className="h-4 w-4" />
-              <span>Boka lektion</span>
+              <span>{t('nav.book')}</span>
             </a>
           </div>
 
@@ -52,36 +62,46 @@ const Header = () => {
                 className="text-foreground hover:text-primary transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Hem
+                {t('nav.home')}
               </a>
               <a
                 href="#om-mig"
                 className="text-foreground hover:text-primary transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Om mig
+                {t('nav.about')}
               </a>
               <a
                 href="#metod"
                 className="text-foreground hover:text-primary transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Metod
+                {t('nav.method')}
               </a>
               <a
                 href="#kurser"
                 className="text-foreground hover:text-primary transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Kurser
+                {t('nav.courses')}
               </a>
+              <button
+                onClick={() => {
+                  toggleLanguage();
+                  setIsMenuOpen(false);
+                }}
+                className="text-foreground hover:text-primary transition-colors duration-200 flex items-center space-x-2 justify-center py-2"
+              >
+                <Languages className="h-4 w-4" />
+                <span>{language === 'sv' ? 'English' : 'Svenska'}</span>
+              </button>
               <a
                 href="#kontakt"
                 className="btn-primary inline-flex items-center space-x-2 justify-center"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <Calendar className="h-4 w-4" />
-                <span>Boka lektion</span>
+                <span>{t('nav.book')}</span>
               </a>
             </div>
           </div>

@@ -1,6 +1,8 @@
 import { Calendar, Play, BookOpen, Clock, Users, CheckCircle } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Courses = () => {
+  const { t } = useLanguage();
   const privateLessons = {
     title: "Privatlektioner",
     price: "500 kr/timme",
@@ -64,11 +66,10 @@ const Courses = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Kurser & <span className="text-gradient">Lektioner</span>
+            {t('courses.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Välj mellan personliga lektioner för maximal flexibilitet eller 
-            strukturerade videokurser du kan ta i din egen takt.
+            {t('courses.subtitle')}
           </p>
         </div>
 
@@ -80,13 +81,13 @@ const Courses = () => {
                 <Calendar className="h-10 w-10 text-white" />
               </div>
               <h3 className="text-3xl font-bold text-foreground mb-4">
-                {privateLessons.title}
+                {t('courses.private.title')}
               </h3>
               <div className="text-4xl font-bold text-primary mb-4">
-                {privateLessons.price}
+                {t('courses.private.price')}
               </div>
               <p className="text-muted-foreground mb-6">
-                {privateLessons.description}
+                {t('courses.private.description')}
               </p>
             </div>
 
@@ -104,7 +105,7 @@ const Courses = () => {
               className="btn-primary w-full text-center inline-flex items-center justify-center space-x-2"
             >
               <Calendar className="h-5 w-5" />
-              <span>Boka första lektionen</span>
+              <span>{t('courses.private.book')}</span>
             </a>
           </div>
 
@@ -115,11 +116,10 @@ const Courses = () => {
                 <Play className="h-10 w-10 text-white" />
               </div>
               <h3 className="text-3xl font-bold text-foreground mb-4">
-                YouTube Kanal
+                {t('courses.youtube.title')}
               </h3>
               <p className="text-muted-foreground mb-6">
-                Gratis svenska lektioner och tips på min YouTube-kanal. 
-                Ny video varje vecka!
+                {t('courses.youtube.description')}
               </p>
             </div>
 
@@ -151,7 +151,7 @@ const Courses = () => {
               className="btn-secondary w-full text-center inline-flex items-center justify-center space-x-2"
             >
               <Play className="h-5 w-5" />
-              <span>Besök YouTube-kanalen</span>
+              <span>{t('courses.youtube.watch')}</span>
             </a>
           </div>
         </div>
@@ -159,7 +159,7 @@ const Courses = () => {
         {/* Video Courses */}
         <div className="fade-in">
           <h3 className="text-3xl font-bold text-center text-foreground mb-12">
-            Videokurser
+            {t('courses.video.title')}
           </h3>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Mail, Calendar, MessageSquare, Clock, MapPin, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,10 +32,10 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Redo att börja din <span className="text-gradient">svenska resa</span>?
+            {t('contact.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Boka din första lektion idag eller ställ en fråga. Jag ser fram emot att höra från dig!
+            {t('contact.subtitle')}
           </p>
         </div>
 

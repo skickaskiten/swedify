@@ -1,7 +1,9 @@
 import { Calendar, Play, BookOpen } from "lucide-react";
 import ragnarHero from "@/assets/ragnar-hero.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
+  const { t } = useLanguage();
   return (
     <section id="hem" className="hero-section">
       <div className="hero-content">
@@ -9,13 +11,12 @@ const Hero = () => {
           {/* Logo & Title */}
           <div className="mb-8 animate-fade-in">
             <h1 className="hero-title">
-              Lär dig svenska
+              {t('hero.title')}
               <br />
-              <span className="text-accent">kul och effektivt</span>
+              <span className="text-accent">{t('hero.subtitle')}</span>
             </h1>
             <p className="hero-subtitle">
-              Hej! Jag är Ragnar, din svenska språknörd som gör lärandet roligt och enkelt. 
-              Från grundläggande konversation till avancerad grammatik - vi gör det tillsammans!
+              {t('hero.description')}
             </p>
           </div>
 
@@ -23,11 +24,11 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-slide-up">
             <a href="#kontakt" className="btn-hero inline-flex items-center space-x-2 justify-center">
               <Calendar className="h-5 w-5" />
-              <span>Boka första lektionen</span>
+              <span>{t('hero.bookLesson')}</span>
             </a>
             <a href="#kurser" className="btn-hero inline-flex items-center space-x-2 justify-center">
               <BookOpen className="h-5 w-5" />
-              <span>Se videokurser</span>
+              <span>{t('hero.videoCourses')}</span>
             </a>
           </div>
 

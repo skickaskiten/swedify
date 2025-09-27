@@ -1,6 +1,8 @@
 import { BookOpen, Mail, Youtube, Instagram, Heart } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -14,8 +16,7 @@ const Footer = () => {
               <span className="text-2xl font-bold">Swedify</span>
             </div>
             <p className="text-background/80 leading-relaxed">
-              Lär dig svenska kul och effektivt med Ragnar. 
-              Din resa mot flyt svenska börjar här!
+              {t('footer.brand.description')}
             </p>
             <div className="flex space-x-4">
               <a 
@@ -45,22 +46,22 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-xl font-semibold text-background">Snabblänkar</h4>
+            <h4 className="text-xl font-semibold text-background">{t('footer.quickLinks')}</h4>
             <nav className="flex flex-col space-y-3">
               <a href="#hem" className="text-background/80 hover:text-accent transition-colors">
-                Hem
+                {t('nav.home')}
               </a>
               <a href="#om-mig" className="text-background/80 hover:text-accent transition-colors">
-                Om mig
+                {t('nav.about')}
               </a>
               <a href="#metod" className="text-background/80 hover:text-accent transition-colors">
-                Metod
+                {t('nav.method')}
               </a>
               <a href="#kurser" className="text-background/80 hover:text-accent transition-colors">
-                Kurser
+                {t('nav.courses')}
               </a>
               <a href="#kontakt" className="text-background/80 hover:text-accent transition-colors">
-                Kontakt
+                {t('nav.contact')}
               </a>
             </nav>
           </div>

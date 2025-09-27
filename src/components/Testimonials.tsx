@@ -1,7 +1,9 @@
 import { Star, Quote } from "lucide-react";
 import { useEffect } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Testimonials = () => {
+  const { t } = useLanguage();
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -92,11 +94,10 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Vad säger mina <span className="text-gradient">elever</span>?
+            {t('testimonials.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Över 500 nöjda elever har förbättrat sin svenska med Swedify-metoden. 
-            Här är vad några av dem säger:
+            {t('testimonials.subtitle')}
           </p>
         </div>
 
