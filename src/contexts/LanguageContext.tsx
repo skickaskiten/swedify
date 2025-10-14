@@ -77,6 +77,21 @@ const translations = {
     'courses.youtube.price': 'Helt gratis',
     'courses.youtube.watch': 'Se videor',
     
+    // Progress
+    'progress.title': 'Din Framgång',
+    'progress.subtitle': 'Följ din läranderesa med lektioner och individuell övning',
+    'progress.logWork': 'Logga Individuellt Arbete',
+    'progress.selectWeek': 'Välj Vecka',
+    'progress.chooseWeek': 'Välj en vecka',
+    'progress.minutes': 'Minuter',
+    'progress.addMinutes': 'Lägg Till Minuter',
+    'progress.weeklyProgress': 'Veckovis Framgång',
+    'progress.lessons': 'Lektioner',
+    'progress.individualWork': 'Individuellt Arbete',
+    'progress.timeSpent': 'Spenderad Tid',
+    'progress.total': 'Totalt',
+    'progress.locale': 'sv-SE',
+    
     // Contact
     'contact.title': 'Redo att börja din svenska-resa?',
     'contact.subtitle': 'Boka din första lektion eller ställ en fråga',
@@ -172,6 +187,21 @@ const translations = {
     'courses.youtube.description': 'Free Swedish lessons and culture tips',
     'courses.youtube.price': 'Completely free',
     'courses.youtube.watch': 'Watch videos',
+    
+    // Progress
+    'progress.title': 'Your Progress',
+    'progress.subtitle': 'Track your learning journey with lessons and individual practice',
+    'progress.logWork': 'Log Individual Work',
+    'progress.selectWeek': 'Select Week',
+    'progress.chooseWeek': 'Choose a week',
+    'progress.minutes': 'Minutes',
+    'progress.addMinutes': 'Add Minutes',
+    'progress.weeklyProgress': 'Weekly Progress',
+    'progress.lessons': 'Lessons',
+    'progress.individualWork': 'Individual Work',
+    'progress.timeSpent': 'Time Spent',
+    'progress.total': 'Total',
+    'progress.locale': 'en-US',
     
     // Contact
     'contact.title': 'Ready to start your Swedish journey?',
