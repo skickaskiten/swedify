@@ -169,16 +169,17 @@ const StudentProgress = () => {
                   data={weeklyData}
                   margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
                 >
-                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
                   <XAxis
                     dataKey="week"
-                    stroke="hsl(var(--foreground))"
+                    axisLine={false}
+                    tickLine={false}
                     tick={{ fill: "hsl(var(--foreground))" }}
                   />
                   <YAxis
                     tickFormatter={formatYAxis}
                     ticks={[0, 30, 60, 90, 120, 150, 180]}
-                    stroke="hsl(var(--foreground))"
+                    axisLine={false}
+                    tickLine={false}
                     tick={{ fill: "hsl(var(--foreground))" }}
                     label={{
                       value: t("progress.timeSpent"),
